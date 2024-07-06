@@ -1,0 +1,75 @@
+1. Planowanie i Analiza Wymagań
+Określenie funkcji aplikacji:
+Dodawanie nowego kontaktu
+Edytowanie istniejącego kontaktu
+Usuwanie kontaktu
+Wyświetlanie listy kontaktów
+Wyszukiwanie kontaktów
+2. Konfiguracja Środowiska
+Zainstaluj Go:
+Upewnij się, że masz zainstalowany Go.
+Skonfiguruj GOPATH i workspace.
+Stwórz nowy projekt:
+Utwórz katalog projektu.
+Zainicjuj moduł Go (go mod init adresowa-ksiazka).
+3. Projektowanie Struktury Aplikacji
+Struktura projektu:
+main.go - punkt wejścia aplikacji.
+handlers/ - obsługa żądań HTTP.
+models/ - struktury danych.
+templates/ - szablony HTML.
+static/ - pliki statyczne (CSS, JS).
+4. Implementacja Backend
+Konfiguracja serwera HTTP w Go:
+
+Użyj pakietu net/http do stworzenia serwera.
+Dodaj routing dla poszczególnych stron i funkcji (dodawanie, edytowanie, usuwanie, wyświetlanie, wyszukiwanie kontaktów).
+Stworzenie modelu danych:
+
+Zdefiniuj strukturę Contact w pliku models/contact.go:
+go
+Skopiuj kod
+type Contact struct {
+    ID        int
+    FirstName string
+    LastName  string
+    Phone     string
+    Email     string
+    Address   string
+}
+Implementacja CRUD (Create, Read, Update, Delete):
+
+Stwórz funkcje do dodawania, edytowania, usuwania i pobierania kontaktów.
+Użyj wbudowanych map lub bazy danych SQLite, aby przechowywać dane kontaktów.
+5. Implementacja Frontend
+Szablony HTML:
+Stwórz pliki HTML w katalogu templates/.
+Wykorzystaj szablony Go (html/template) do dynamicznego generowania stron.
+Stylizacja i interaktywność:
+Dodaj pliki CSS do katalogu static/ w celu stylizacji.
+Użyj HTMX do obsługi dynamicznych interakcji (np. ładowanie formularzy bez pełnego przeładowania strony).
+6. Integracja Backend z Frontend
+Obsługa formularzy:
+Utwórz formularze HTML do dodawania i edytowania kontaktów.
+Obsługuj dane formularzy na backendzie w Go.
+Dynamiczne ładowanie:
+Użyj HTMX do dynamicznego ładowania i aktualizacji elementów strony (np. lista kontaktów).
+7. Testowanie i Debugowanie
+Testy jednostkowe:
+Napisz testy dla funkcji CRUD w Go.
+Testy end-to-end:
+Przetestuj całą aplikację, aby upewnić się, że wszystkie funkcje działają poprawnie.
+8. Deployment
+Przygotowanie do wdrożenia:
+
+Skonfiguruj serwer produkcyjny (np. VPS, Docker).
+Skopiuj pliki projektu na serwer.
+Uruchomienie aplikacji:
+
+Upewnij się, że serwer jest poprawnie skonfigurowany do obsługi aplikacji Go.
+Skonfiguruj Nginx lub inny reverse proxy do obsługi ruchu HTTP/HTTPS.
+9. Monitorowanie i Utrzymanie
+Monitorowanie aplikacji:
+Użyj narzędzi monitorujących, aby śledzić działanie aplikacji.
+Aktualizacje i poprawki:
+Regularnie aktualizuj aplikację, dodawaj nowe funkcje i poprawiaj błędy.
